@@ -12,6 +12,13 @@ function giveMeFive() {
 
 }
 
+//My Answer
+
+function giveMeFive() {
+  return 5;
+}
+
+
 //---------
 
 // 2.
@@ -21,6 +28,12 @@ function giveMeFive() {
 
 function noOp() {
 
+}
+
+//My Answer
+
+function noOp(value) {
+  return value;
 }
 
 //---------
@@ -33,6 +46,12 @@ function noOp() {
 
 function double() {
 
+}
+
+//My Answer
+
+function double(myNum) {
+  return myNum * 2;
 }
 
 //---------
