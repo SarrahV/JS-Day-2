@@ -125,7 +125,19 @@ function sum(myArray) {
 
 // HINT: use an array and a for loop
 
-function letterIndex() {
+/* Steps? 
+  Create array with alphabet and get index of each letter starting from 0
+
+  
+
+*/
+
+function letterIndex(letter) {
+  var arr = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z];
+  var index;
+  for (index = 0; index < arr.length; index++) {
+
+  }
 
 }
 
