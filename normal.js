@@ -65,6 +65,12 @@ function square() {
 
 }
 
+//My Answer
+
+function square(myNum) {
+  return myNum * myNum;
+}
+
 //---------
 
 // 5.
@@ -73,8 +79,39 @@ function square() {
 // of all the numbers in the array added together)
 // and return it.
 
-function sum() {
+myArray = [1,2,3,4,5];
+           0 1 2 3 4
 
+0
+1
+2
+3
+4
+
+myArray[0]
+myArray[1]
+
+myArray[index]
+
+[1,2,3,4,5][]
+
+// myArray = ["a","b","c","d"];
+// for (index = 0; index < myArray.length; index++) {
+//   console.log("array: "+myArray);
+//   console.log("index: "+index);
+//   console.log("value: "+myArray[index]);
+//   console.log("--------------");
+// }
+
+function sum(myArray) {
+  var theanswer;
+  theanswer = 0;
+  var index;
+  for (index = 0; index < myArray.length; index++) {
+    var numberAtIndex = myArray[index];
+    theanswer += numberAtIndex;
+  }
+  return theanswer;
 }
 
 //---------
