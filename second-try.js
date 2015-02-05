@@ -9,15 +9,9 @@
 // Should always return the value 5
 
 function giveMeFive() {
-
-}
-
-//My Answer
-
-function giveMeFive() {
   return 5;
-}
 
+}
 
 //---------
 
@@ -25,12 +19,6 @@ function giveMeFive() {
 // This function should accept 1 parameter
 // and return the exact same thing. This type
 // of function is called a no-op as in (no operation)
-
-function noOp() {
-
-}
-
-//My Answer
 
 function noOp(value) {
   return value;
@@ -44,14 +32,8 @@ function noOp(value) {
 // it should return a number twice the size as the number
 // that is passed in.
 
-function double() {
-
-}
-
-//My Answer
-
-function double(myNum) {
-  return myNum * 2;
+function double(value) {
+  return value * 2;
 }
 
 //---------
@@ -61,14 +43,8 @@ function double(myNum) {
 // It should return the number squared. Squared meaning
 // it should return the number multiplied by itself.
 
-function square() {
-
-}
-
-//My Answer
-
-function square(myNum) {
-  return myNum * myNum;
+function square(value) {
+  return value * value;
 }
 
 //---------
@@ -79,39 +55,15 @@ function square(myNum) {
 // of all the numbers in the array added together)
 // and return it.
 
-myArray = [1,2,3,4,5];
-           0 1 2 3 4
-
-0
-1
-2
-3
-4
-
-myArray[0]
-myArray[1]
-
-myArray[index]
-
-[1,2,3,4,5][]
-
-// myArray = ["a","b","c","d"];
-// for (index = 0; index < myArray.length; index++) {
-//   console.log("array: "+myArray);
-//   console.log("index: "+index);
-//   console.log("value: "+myArray[index]);
-//   console.log("--------------");
-// }
-
 function sum(myArray) {
-  var theanswer;
-  theanswer = 0;
-  var index;
-  for (index = 0; index < myArray.length; index++) {
-    var numberAtIndex = myArray[index];
-    theanswer += numberAtIndex;
-  }
-  return theanswer;
+    var theAnswer;
+    theAnswer = 0;
+    var index;
+    for (index = 0; index < myArray.length; index++) {
+      var numberAtIndex = myArray[index];
+      theAnswer += numberAtIndex;
+    }
+    return theAnswer;
 }
 
 //---------
@@ -125,24 +77,40 @@ function sum(myArray) {
 
 // HINT: use an array and a for loop
 
-/* Steps? 
-  Create array with alphabet.
-  Get index of each letter starting from 0.
-  Compare letterIndex letter to index of corresponding letter in arr 
-  Must add 1 to get correct index
-
-
+function letterIndex(myLetter) {
+  var alph, lowerCase, index;
+  var alph = { 
+            "a" :0,
+            "b" :1,
+            "c" :2,
+            "d" :3,
+            "e" :4,
+            "f" :5,
+            "g" :6,
+            "h" :7,
+            "i" :8,
+            "j" :9,
+            "k" :10,
+            "l" :11,
+            "m" :12,
+            "n" :13,
+            "o" :14,
+            "p" :15,
+            "q" :16,
+            "r" :17,
+            "s" :18,
+            "t" :19,
+            "u" :20,
+            "v" :21,
+            "w" :22,
+            "x" :23,
+            "y" :24,
+            "z" :25
+};
+    lowerCase = myLetter.toLowerCase();
+    index = alph[lowerCase];
   
-
-*/
-
-function letterIndex(letter) {
-  var arr = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z];
-  var index;
-  for (index = 0; index < arr.length; index++) {
-
-  }
-
+    return index; 
 }
 
 //---------
@@ -159,9 +127,20 @@ function letterIndex(letter) {
 
 // HINT: use an array and the modulo (%) operator
 
-function reverseLetterIndex() {
+
+function reverseLetterIndex(letterNum) {
+  var alph = ["a", "b", "c", "d", "e", 
+              "f", "g", "h", "i", "j", 
+              "k", "l", "m", "n", "o", 
+              "p", "q", "r", "s", "t", 
+              "u", "v", "w", "x", "y",
+              "z"];
+  var index;
+  index = 0;
 
 }
+
+return letter;
 
 //---------
 
