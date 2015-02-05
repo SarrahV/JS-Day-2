@@ -128,19 +128,16 @@ function letterIndex(myLetter) {
 // HINT: use an array and the modulo (%) operator
 
 
-function reverseLetterIndex(letterNum) {
-  var alph = ["a", "b", "c", "d", "e", 
-              "f", "g", "h", "i", "j", 
-              "k", "l", "m", "n", "o", 
-              "p", "q", "r", "s", "t", 
-              "u", "v", "w", "x", "y",
-              "z"];
-  var index;
-  index = 0;
-
+function reverseLetterIndex(myLetter) {
+  var alph, letter;
+  var alph = "abcdefghijklmnopqrstuvwxyz".split("");
+  
+  letter = alph[myLetter];
+    
+  return letter;
 }
 
-return letter;
+
 
 //---------
 
