@@ -9,15 +9,9 @@
 // Should always return the value 5
 
 function giveMeFive() {
-
-}
-
-//My Answer
-
-function giveMeFive() {
   return 5;
-}
 
+}
 
 //---------
 
@@ -25,12 +19,6 @@ function giveMeFive() {
 // This function should accept 1 parameter
 // and return the exact same thing. This type
 // of function is called a no-op as in (no operation)
-
-function noOp() {
-
-}
-
-//My Answer
 
 function noOp(value) {
   return value;
@@ -44,14 +32,8 @@ function noOp(value) {
 // it should return a number twice the size as the number
 // that is passed in.
 
-function double() {
-
-}
-
-//My Answer
-
-function double(myNum) {
-  return myNum * 2;
+function double(value) {
+  return value * 2;
 }
 
 //---------
@@ -61,14 +43,8 @@ function double(myNum) {
 // It should return the number squared. Squared meaning
 // it should return the number multiplied by itself.
 
-function square() {
-
-}
-
-//My Answer
-
-function square(myNum) {
-  return myNum * myNum;
+function square(value) {
+  return value * value;
 }
 
 //---------
@@ -79,39 +55,15 @@ function square(myNum) {
 // of all the numbers in the array added together)
 // and return it.
 
-myArray = [1,2,3,4,5];
-           0 1 2 3 4
-
-0
-1
-2
-3
-4
-
-myArray[0]
-myArray[1]
-
-myArray[index]
-
-[1,2,3,4,5][]
-
-// myArray = ["a","b","c","d"];
-// for (index = 0; index < myArray.length; index++) {
-//   console.log("array: "+myArray);
-//   console.log("index: "+index);
-//   console.log("value: "+myArray[index]);
-//   console.log("--------------");
-// }
-
 function sum(myArray) {
-  var theanswer;
-  theanswer = 0;
-  var index;
-  for (index = 0; index < myArray.length; index++) {
-    var numberAtIndex = myArray[index];
-    theanswer += numberAtIndex;
-  }
-  return theanswer;
+    var theAnswer;
+    theAnswer = 0;//just to clear out any possible variable
+    var index;
+    for (index = 0; index < myArray.length; index++) {
+      var numberAtIndex = myArray[index];
+      theAnswer += numberAtIndex;
+    }
+    return theAnswer;
 }
 
 //---------
@@ -125,24 +77,40 @@ function sum(myArray) {
 
 // HINT: use an array and a for loop
 
-/* Steps? 
-  Create array with alphabet.
-  Get index of each letter starting from 0.
-  Compare letterIndex letter to index of corresponding letter in arr 
-  Must add 1 to get correct index
-
-
+function letterIndex(myLetter) {
+  var alph, lowerCase, index;
+  var alph = { 
+            "a" :0,
+            "b" :1,
+            "c" :2,
+            "d" :3,
+            "e" :4,
+            "f" :5,
+            "g" :6,
+            "h" :7,
+            "i" :8,
+            "j" :9,
+            "k" :10,
+            "l" :11,
+            "m" :12,
+            "n" :13,
+            "o" :14,
+            "p" :15,
+            "q" :16,
+            "r" :17,
+            "s" :18,
+            "t" :19,
+            "u" :20,
+            "v" :21,
+            "w" :22,
+            "x" :23,
+            "y" :24,
+            "z" :25
+};
+    lowerCase = myLetter.toLowerCase();
+    index = alph[lowerCase];
   
-
-*/
-
-function letterIndex(letter) {
-  var arr = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z];
-  var index;
-  for (index = 0; index < arr.length; index++) {
-
-  }
-
+    return index; 
 }
 
 //---------
@@ -169,6 +137,8 @@ function reverseLetterIndex(myLetter) {
   return letter;
 }
 
+
+
 //---------
 
 // 8.
@@ -182,42 +152,40 @@ function reverseLetterIndex(myLetter) {
 // HINT: use the previous 2 functions
 
 function rot13(sentence) {
-  var finalSentence;
+  var cipheredCode;
 
-  function stepOne(letter) {
+  function codeLetter(letter) {
     var index = letterIndex(letter);//this comes from the function above
-    var shiftInd = index +13;
-    var shiftLet = reverseLetterIndex(shiftInd); //this comes from the function above that indexed the letters to numbers
-    return shiftLet;
-
+    var indexShifted = index + 13;
+    var letterShifted = reverseLetterIndex(indexShifted); //this comes from the function above that indexed the letters to numbers
+    return letterShifted;
   }
 
-  function stepTwo(word) {
+  function codeWord(word) {
     var letters = word.split("");
-    var processedLetters = [];
-    var stepOne;//this comes from the function above
-    var letter;
+    var combinedLetters = [];
+    var processedLetter, letter;
 
-  for(var index = 0; index <letters.length; index++) {  //loops over and indexes letter
+  for(var index = 0; index < letters.length; index++) {  //loops over and indexes letter
     letter = letters[index]; //sets var letter to 0
-    processedLetter = stepOne(letter); //assigns function above and pases var letter through it
-    processedLetter.push(stepOne); 
+    processedLetter = codeLetter(letter); //assigns function above and pases var letter through it
+    combinedLetters.push(processedLetter); 
   }
   
-  var processedWord = processedLetter.join("");
+  var processedWord = combinedLetters.join("");
   return processedWord;
 }
 
-  var words = sentence.split(""); 
+  var words = sentence.split(" "); 
   var word, cipheredWord, finishedWords = [];
   
-  for(var index = 0; index <words.length; index++) {  //loops over and indexes letter
+  for(var index = 0; index < words.length; index++) {  //loops over and indexes letter
     word = words[index]; //sets var letter to 0
-    cipheredWord = processedWord(Word); //assigns function above and pases var letter through it
+    cipheredWord = codeWord(word); //assigns function above and pases var letter through it
     finishedWords.push(cipheredWord);
   }
 
-  finalSentence = finishedWords.join(" ");
+  cipheredCode = finishedWords.join(" ");
 
-  return finalSentence;
+  return cipheredCode;
 }

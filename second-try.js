@@ -152,44 +152,42 @@ function reverseLetterIndex(myLetter) {
 // HINT: use the previous 2 functions
 
 function rot13(sentence) {
-  var finalSentence;
+  var cipheredCode;
 
-  function stepOne(letter) {
+  function codeLetter(letter) {
     var index = letterIndex(letter);//this comes from the function above
-    var shiftInd = index +13;
-    var shiftLet = reverseLetterIndex(shiftInd); //this comes from the function above that indexed the letters to numbers
-    return shiftLet;
-
+    var indexShifted = index + 13;
+    var letterShifted = reverseLetterIndex(indexShifted); //this comes from the function above that indexed the letters to numbers
+    return letterShifted;
   }
 
-  function stepTwo(word) {
+  function codeWord(word) {
     var letters = word.split("");
-    var processedLetters = [];
-    var stepOne;//this comes from the function above
-    var letter;
+    var combinedLetters = [];
+    var processedLetter, letter;
 
-  for(var index = 0; index <letters.length; index++) {  //loops over and indexes letter
+  for(var index = 0; index < letters.length; index++) {  //loops over and indexes letter
     letter = letters[index]; //sets var letter to 0
-    processedLetter = stepOne(letter); //assigns function above and pases var letter through it
-    processedLetter.push(stepOne); 
+    processedLetter = codeLetter(letter); //assigns function above and pases var letter through it
+    combinedLetters.push(processedLetter); 
   }
   
-  var processedWord = processedLetter.join("");
+  var processedWord = combinedLetters.join("");
   return processedWord;
 }
 
-  var words = sentence.split(""); 
+  var words = sentence.split(" "); 
   var word, cipheredWord, finishedWords = [];
   
-  for(var index = 0; index <words.length; index++) {  //loops over and indexes letter
+  for(var index = 0; index < words.length; index++) {  //loops over and indexes letter
     word = words[index]; //sets var letter to 0
-    cipheredWord = processedWord(Word); //assigns function above and pases var letter through it
+    cipheredWord = codeWord(word); //assigns function above and pases var letter through it
     finishedWords.push(cipheredWord);
   }
 
-  finalSentence = finishedWords.join(" ");
+  cipheredCode = finishedWords.join(" ");
 
-  return finalSentence;
+  return cipheredCode;
 }
 
 
